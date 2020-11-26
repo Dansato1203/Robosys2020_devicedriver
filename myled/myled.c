@@ -23,7 +23,7 @@ static int list[num] = {25, 26, 12};
 static ssize_t led_write(struct file* filp, const char* buf, size_t count, loff_t* pos)
 {
         char c;
-        int i;
+        int i, n;
         if(copy_from_user(&c,buf,sizeof(char)))
           return -EFAULT;
         
@@ -37,16 +37,24 @@ static ssize_t led_write(struct file* filp, const char* buf, size_t count, loff_
           }else if(c == '3'){
             gpio_base[7] = 1 << list[1];
           }else if(c == '4'){
-            gpio_base[10] = 1 << list[3];
+            gpio_base[10] = 1 << list[2];
           }else if(c == '5'){
             gpio_base[7] = 1 << list[2];
           }else if(c == 'A'){
-            for(i = 0;i < 10;i++){
+            for(i = 0;i <= 10;i++){
+              n = 1000 - 100*i + 1;
               gpio_base[7] = 1 << list[0];
-              msleep(100);
+              gpio_base[7] = 1 << list[2];
+              msleep(10);
+              gpio_base[10] = 1 << list[2];
+              msleep(n);
+
               gpio_base[10] = 1 << list[0];
               gpio_base[7] = 1 << list[1];
-              msleep(100);
+              gpio_base[7] = 1 << list[2];
+              msleep(10);
+              gpio_base[10] = 1 << list[2];
+              msleep(n);
               gpio_base[10] = 1 << list[1];
             }
             for(i = 0;i <= 2;i++){
