@@ -28,19 +28,13 @@ static ssize_t led_write(struct file* filp, const char* buf, size_t count, loff_
           return -EFAULT;
         
         if(c && c != '\n'){
-          if(c == '0'){
-            gpio_base[10] = 1 << list[0];
-          }else if(c == '1'){
-            gpio_base[7] = 1 << list[0];
-          }else if(c == '2'){
-            gpio_base[10] = 1 << list[1];
-          }else if(c == '3'){
-            gpio_base[7] = 1 << list[1];
-          }else if(c == '4'){
-            gpio_base[10] = 1 << list[2];
-          }else if(c == '5'){
-            gpio_base[7] = 1 << list[2];
-          }else if(c == 'A'){
+/*          if(c == '0') gpio_base[10] = 1 << list[0];
+ *         if(c == '1') gpio_base[7] = 1 << list[0];
+ *         if(c == '2') gpio_base[10] = 1 << list[1];
+ *         if(c == '3') gpio_base[7] = 1 << list[1];
+ *         if(c == '4') gpio_base[10] = 1 << list[2];
+ *         if(c == '5') gpio_base[7] = 1 << list[2];      */
+          if(c == 'A'){
             for(i = 0;i <= 10;i++){
               n = 1000 - 100*i + 1;
               gpio_base[7] = 1 << list[0];
@@ -56,19 +50,29 @@ static ssize_t led_write(struct file* filp, const char* buf, size_t count, loff_
               gpio_base[10] = 1 << list[2];
               msleep(n);
               gpio_base[10] = 1 << list[1];
-            }
-            for(i = 0;i <= 2;i++){
-              gpio_base[7] = 1 << list[2];
-              msleep(50);
-              gpio_base[10] = 1 << list[2];
-              msleep(50);
-              if(i == 2){
-                gpio_base[7] = 1 << list[2];
-                msleep(500);
-                gpio_base[10] = 1 << list[2];
+              
+              if(n == 1){
+                for(i = 0;i <= 5;i++){
+                  gpio_base[7] = 1 << list[0];
+                  gpio_base[7] = 1 << list[2];
+                  msleep(10);
+                  gpio_base[10] = 1 << list[2];
+                  msleep(n);
+
+                  gpio_base[10] = 1 << list[0];
+                  gpio_base[7] = 1 << list[1];
+                  gpio_base[7] = 1 << list[2];
+                  msleep(10);
+                  gpio_base[10] = 1 << list[2];
+                  msleep(n);
+                  gpio_base[10] = 1 << list[1];
+                }
                 break;
               }
             }
+                gpio_base[7] = 1 << list[2];
+                msleep(500);
+                gpio_base[10] = 1 << list[2];
           }else{
             for(i = 0;i <= 2;i++){
               gpio_base[7] = 1 << list[0];
