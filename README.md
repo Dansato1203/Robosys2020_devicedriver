@@ -5,7 +5,7 @@
 ## 動作環境  
   
 以下の環境で動作確認を行っています。  
-・Raspberry Pi 4 ModelB
+・Raspberry Pi 4 ModelB  
   ・Ubuntu 20.04LTS  
   
 ---  
