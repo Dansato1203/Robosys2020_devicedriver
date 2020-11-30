@@ -1,3 +1,10 @@
+// SPDX-License-Identifer: GPL-2.0
+/*
+ * Copyright (C) 2020 Dan Sato. All rights reserved.
+ */
+
+
+
 #include <linux/module.h>
 #include <linux/fs.h>
 #include <linux/cdev.h>
@@ -8,7 +15,7 @@
 
 #define num 3
 
-MODULE_AUTHOR("Ryuichi Ueda, Dan Sato");
+MODULE_AUTHOR("Ryuichi Ueda and Dan Sato");
 MODULE_DESCRIPTION("driver for LED control");
 MODULE_LICENSE("GPL");
 MODULE_VERSION("0.0.1");
