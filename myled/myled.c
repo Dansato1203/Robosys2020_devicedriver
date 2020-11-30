@@ -135,7 +135,7 @@ static int __init init_mod(void)
                 return retval;
         }
 
-        cls = class_create(THIS_MODULE,"myled");   //ここから追加
+        cls = class_create(THIS_MODULE,"myled");   
         if(IS_ERR(cls)){
                 printk(KERN_ERR "class_create failed.");
                 return PTR_ERR(cls);
