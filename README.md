@@ -25,7 +25,8 @@
   
 ### 回路
   
-以下のように回路を組みました。
+以下のように回路を組みました。  
+
 <img src=https://github.com/Dansato1203/Robosys2020_devicedriver/blob/master/13118597806544.jpg width=500px />  
   
 LEDはそれぞれのアノードがGPIO25,GPIO26に、電子ブザーはプラス側をGPIO12に接続しています。GNDはどこでも構いません。  
