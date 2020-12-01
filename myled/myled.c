@@ -16,7 +16,7 @@
 #define num 3
 
 MODULE_AUTHOR("Ryuichi Ueda and Dan Sato");
-MODULE_DESCRIPTION("driver for LED control");
+MODULE_DESCRIPTION("driver for LED and Buzzer control");
 MODULE_LICENSE("GPL");
 MODULE_VERSION("0.0.1");
 
@@ -84,11 +84,11 @@ static ssize_t led_write(struct file* filp, const char* buf, size_t count, loff_
             for(i = 0;i <= 2;i++){
               gpio_base[7] = 1 << list[0];
               gpio_base[7] = 1 << list[1];
-              gpio_base[7] = 1 << 12;
+              gpio_base[7] = 1 << list[2];
               msleep(100);
               gpio_base[10] = 1 << list[0];
               gpio_base[10] = 1 << list[1];
-              gpio_base[10] = 1 << 12;
+              gpio_base[10] = 1 << list[2];
               msleep(100);
             }
           }
