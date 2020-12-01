@@ -14,7 +14,7 @@
   
 ## 用意する物
   
-・Raspberry Pi 4 ModelB
+・Raspberry Pi 4 ModelB  
 ・ブレッドボード  
 ・LED *2  
 ・電子ブザー  
@@ -38,7 +38,7 @@ LEDはそれぞれのアノードがGPIO25,GPIO26に、電子ブザーはプラ�
 実行する場合、以下のように行ってください。  
 ```sh
 $ git clone https://github.com/Dansato1203/Robosys2020_devicedriver  
-$ cd Robosys2020_devicedriver  
+$ cd Robosys2020_devicedriver/myled  
 $ make  
 $ sudo insmod myled.ko  
 $ sudo chmod 666 /dev/myled0  
