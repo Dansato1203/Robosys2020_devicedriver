@@ -64,7 +64,7 @@ $ echo a > /dev/myled0
 ```
   
 この場合、以下のように動作します。  
-<img src= https://github.com/Dansato1203/images/blob/master/device_driver/demo1.gif width=500px />  
+<img src= https://github.com/Dansato1203/images/blob/master/device_driver/demo2.gif width=500px />  
   
 ---
   
