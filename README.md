@@ -44,6 +44,8 @@ $ sudo insmod myled.ko
 $ sudo chmod 666 /dev/myled0  
 ```
   
+---
+  
 ### 実行した場合  
 #### Aを入力した場合  
   
