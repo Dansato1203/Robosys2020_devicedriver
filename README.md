@@ -27,7 +27,7 @@
   
 以下のように回路を組みました。  
 
-<img src=https://github.com/Dansato1203/Robosys2020_devicedriver/blob/master/13118597806544.jpg width=500px />  
+<img src= https://github.com/Dansato1203/images/blob/master/device_driver/13118597806544.jpg width=500px />  
   
 LEDはそれぞれのアノードがGPIO25,GPIO26に、電子ブザーはプラス側をGPIO12に接続しています。GNDはどこでも構いません。  
   
@@ -52,7 +52,7 @@ $ echo A > /dev/myled0
 ```
 
 上記のように'A'をデバイスファイルに入力すると、以下のように動作します。
-<img src=https://github.com/Dansato1203/Robosys2020_devicedriver/blob/master/demo1.gif width=500px />
+<img src= https://github.com/Dansato1203/images/blob/master/device_driver/demo1.gif width=500px />
   
 ---
 
@@ -64,13 +64,13 @@ $ echo a > /dev/myled0
 ```
   
 この場合、以下のように動作します。  
-<img src= https://github.com/Dansato1203/Robosys2020_devicedriver/blob/master/demo2.gif width=500px />  
+<img src= https://github.com/Dansato1203/images/blob/master/device_driver/demo1.gif width=500px />  
   
 ---
   
 ### デモ動画  
   
-<img src= https://github.com/Dansato1203/Robosys2020_devicedriver/blob/master/IMG_3674.PNG width=500px />
+<img src= https://github.com/Dansato1203/images/blob/master/device_driver/IMG_3674.PNG width=500px />
   
 youtubeにあげたデモ動画は[こちら](https://www.youtube.com/watch?v=sgbnUssXj0Q)になります。
   
